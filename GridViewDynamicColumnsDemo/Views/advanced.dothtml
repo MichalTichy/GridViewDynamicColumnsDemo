@@ -1,4 +1,4 @@
-﻿@viewModel GridViewDynamicColumnsDemo.ViewModels.DefaultViewModel, GridViewDynamicColumnsDemo
+﻿@viewModel GridViewDynamicColumnsDemo.ViewModels.AdvancedViewModel, GridViewDynamicColumnsDemo
 
 <!DOCTYPE html>
 
@@ -8,11 +8,11 @@
     <title></title>
 </head>
 <body>
-
     <%-- If you want to add columns after initial page load than you have to enable PostBack.Update --%>
     <dot:GridView DataSource="{value: Data}" ID="GridView" PostBack.Update="true">
         <dot:GridViewTextColumn HeaderText="Markup" ValueBinding="{value: DefaultProp}" />
     </dot:GridView>
+    <dot:Button Click="{command: AddColumnViaPostBack('Command')}" Text="Add column" />
 </body>
 </html>
 

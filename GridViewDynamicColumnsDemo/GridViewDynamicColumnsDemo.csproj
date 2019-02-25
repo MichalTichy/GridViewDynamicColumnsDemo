@@ -19,6 +19,7 @@
     </ItemGroup>
     <ItemGroup>
         <None Remove="dotvvm_serialized_config.json.tmp" />
+        <None Remove="Views\advanced.dothtml" />
         <None Remove="Views\default.dothtml" />
     </ItemGroup>
     <ItemGroup>
