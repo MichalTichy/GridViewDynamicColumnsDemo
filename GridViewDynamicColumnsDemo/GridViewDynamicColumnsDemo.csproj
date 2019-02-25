@@ -19,15 +19,15 @@
     </ItemGroup>
     <ItemGroup>
         <None Remove="dotvvm_serialized_config.json.tmp" />
-        <None Remove="Views\MasterPage.dotmaster" />
+        <None Remove="Views\default.dothtml" />
     </ItemGroup>
     <ItemGroup>
         <Folder Include="wwwroot\" />
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore" Version="2.1.6" />
-        <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.1.6" />
-        <PackageReference Include="DotVVM.AspNetCore" Version="2.0.0" />
+        <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
+        <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.2.0" />
+        <PackageReference Include="DotVVM.AspNetCore" Version="2.2.0-preview01-final" />
         
     </ItemGroup>
     <ItemGroup>

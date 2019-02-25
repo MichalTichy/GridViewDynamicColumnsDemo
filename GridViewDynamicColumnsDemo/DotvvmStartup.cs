@@ -1,4 +1,4 @@
-﻿	using DotVVM.Framework.Configuration;
+﻿using DotVVM.Framework.Configuration;
 using DotVVM.Framework.ResourceManagement;
 using DotVVM.Framework.Routing;
 using Microsoft.Extensions.DependencyInjection;
@@ -23,7 +23,6 @@ namespace GridViewDynamicColumnsDemo
 
         private void ConfigureControls(DotvvmConfiguration config, string applicationPath)
         {
-            // register code-only controls and markup controls
         }
 
         private void ConfigureResources(DotvvmConfiguration config, string applicationPath)

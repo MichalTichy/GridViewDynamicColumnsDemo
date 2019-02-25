@@ -1,6 +1,17 @@
 ﻿@viewModel GridViewDynamicColumnsDemo.ViewModels.DefaultViewModel, GridViewDynamicColumnsDemo
-@masterPage Views/MasterPage.dotmaster
-<dot:Content ContentPlaceHolderID="MainContent">
 
-	<h1>{{value: Title}}</h1>
-</dot:Content>
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <dot:GridView DataSource="{value: Data}" ID="GridView">
+        <dot:GridViewTextColumn ValueBinding="{value: DefaultProp}" />
+    </dot:GridView>
+</body>
+</html>
+
+
