@@ -8,9 +8,12 @@
     <title></title>
 </head>
 <body>
-    <dot:GridView DataSource="{value: Data}" ID="GridView">
-        <dot:GridViewTextColumn ValueBinding="{value: DefaultProp}" />
+
+    <%-- If you want to add columns after initial page load than you have to enable PostBack.Update --%>
+    <dot:GridView DataSource="{value: Data}" ID="GridView" PostBack.Update="true">
+        <dot:GridViewTextColumn HeaderText="Markup" ValueBinding="{value: DefaultProp}" />
     </dot:GridView>
+    <dot:Button Click="{command: AddColumn('Command')}" Text="Add column" />
 </body>
 </html>
 

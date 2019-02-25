@@ -28,15 +28,16 @@ namespace GridViewDynamicColumnsDemo.ViewModels
             new GridViewData(){DefaultProp = 8,AdditionalProp = -8},
             new GridViewData(){DefaultProp = 9,AdditionalProp = -9},
         };
+        
+        
 
         public override Task Load()
         {
-            //All columns have to be present before the GridView perform its OnLoad actions.
-            AddColumn();
+            AddColumn("Load");
             return base.Load();
         }
 
-        protected void AddColumn()
+        public void AddColumn(string name)
         {
             var bindingService = Context.Configuration.ServiceProvider.GetRequiredService<BindingCompilationService>();
 
@@ -50,11 +51,16 @@ namespace GridViewDynamicColumnsDemo.ViewModels
             // ((GridViewData)objects[0]).AdditionalProp translates into _parent0.AdditionalProp which is equal to _this.AdditionalProp
             Expression<Func<object[], int>> expression = objects => ((GridViewData)objects[0]).AdditionalProp;
 
+
+            //this is quite expensive call
+            //but soon there should be available cached version
+            //usage will be bindingService.Cache.CreateCachedBinding("ID", new [] { dataContext }, () => CreateBinding<T>(service, o => (T)o[0], dataContext).CreateBinding(bindingService,expression,dataContextStack));
+            //see https://github.com/riganti/dotvvm/pull/672 for more info
             var valueBindingExpression = ValueBindingExpression.CreateBinding(bindingService,expression,dataContextStack);
             
             var gridViewTextColumn = new GridViewTextColumn()
             {
-                HeaderText = "Added column",
+                HeaderText = name,
                 ValueBinding = valueBindingExpression
             };
 
